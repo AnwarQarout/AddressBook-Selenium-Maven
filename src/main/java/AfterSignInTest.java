@@ -112,15 +112,15 @@ public class AfterSignInTest extends ChromeDriverInit {
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
     }
 
+
     @Test
     public void validateMainContents(){
 
         //a[@data-test='home']//span[@class='sr-only']
         Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='home']//span[@class='sr-only']")).isEmpty());
-
         Assert.assertEquals(driver.getCurrentUrl(),URL);
-        WebElement mainHeader = driver.findElement(By.xpath("//div[@class='text-center']//child::h1"));
 
+        WebElement mainHeader = driver.findElement(By.xpath("//div[@class='text-center']//child::h1"));
         String expectedMainHeader = "Welcome to Address Book";
         Assert.assertEquals(expectedMainHeader, mainHeader.getText());
 
@@ -131,13 +131,22 @@ public class AfterSignInTest extends ChromeDriverInit {
         Assert.assertFalse(driver.findElements(By.xpath("//a[text()='Sign out']")).isEmpty());
         Assert.assertFalse(driver.findElements(By.xpath("//a[text()='Addresses']")).isEmpty());
 
+        Assert.assertFalse(driver.findElements(By.xpath("//span[@class='navbar-text'][text()='"+validUsername+"']")).isEmpty());
+    }
+
+    @Test
+    public void addressBtn(){
         WebElement addressBtn = driver.findElement(By.xpath("//a[text()='Addresses']"));
         addressBtn.click();
-      //  Assert.assertEquals(driver.getCurrentUrl(),addressURL);
-      //  Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='addresses']//span[@class='sr-only']")).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),addressURL);
+        Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='addresses']//span[@class='sr-only']")).isEmpty());
+    }
 
-        Assert.assertFalse(driver.findElements(By.xpath("//span[@class='navbar-text'][text()='"+validUsername+"']")).isEmpty());
-
+    @Test
+    public void signOut(){
+        WebElement signOutLink = driver.findElement(By.xpath("//a[text()='Sign out']"));
+        signOutLink.click();
+        Assert.assertEquals(driver.getCurrentUrl(),"http://a.testaddressbook.com/sign_in");
     }
 
     @Test
@@ -147,6 +156,8 @@ public class AfterSignInTest extends ChromeDriverInit {
         newAddress.click();
         Assert.assertEquals(driver.getCurrentUrl(),newAddressURL);
     }
+
+
 
     @Test
     public void createEmptyAddress(){
@@ -339,12 +350,7 @@ public class AfterSignInTest extends ChromeDriverInit {
        Assert.assertTrue(driver.findElements(By.xpath("//table//tbody//tr//td[text()='"+text+"']")).isEmpty());
     }
 
-    @Test
-    public void signOut(){
-        WebElement signOutLink = driver.findElement(By.xpath("//a[text()='Sign out']"));
-        signOutLink.click();
-        Assert.assertEquals(driver.getCurrentUrl(),"http://a.testaddressbook.com/sign_in");
-    }
+
 
 
 

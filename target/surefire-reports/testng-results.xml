@@ -2,28 +2,28 @@
 <testng-results ignored="2" total="26" passed="15" failed="9" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-08-16T12:43:51 IDT" name="All Test Suite" finished-at="2021-08-16T12:45:00 IDT" duration-ms="68866">
+  <suite started-at="2021-08-16T14:09:36 IDT" name="All Test Suite" finished-at="2021-08-16T14:10:19 IDT" duration-ms="42513">
     <groups>
     </groups>
-    <test started-at="2021-08-16T12:43:51 IDT" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-FirstFunctionality" finished-at="2021-08-16T12:44:18 IDT" duration-ms="26838">
+    <test started-at="2021-08-16T14:09:36 IDT" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-FirstFunctionality" finished-at="2021-08-16T14:09:48 IDT" duration-ms="12049">
       <class name="main.java.MainPageTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T12:43:51 IDT" name="beforeClass" finished-at="2021-08-16T12:43:55 IDT" duration-ms="4048" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T14:09:36 IDT" name="beforeClass" finished-at="2021-08-16T14:09:40 IDT" duration-ms="3815" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="testMainPageTitle()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T12:43:55 IDT" name="testMainPageTitle" finished-at="2021-08-16T12:43:55 IDT" duration-ms="20" status="PASS">
+        <test-method signature="testMainPageTitle()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T14:09:40 IDT" name="testMainPageTitle" finished-at="2021-08-16T14:09:40 IDT" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMainPageTitle -->
-        <test-method signature="testMainPageHeaders()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T12:43:55 IDT" name="testMainPageHeaders" finished-at="2021-08-16T12:43:55 IDT" duration-ms="96" status="PASS">
+        <test-method signature="testMainPageHeaders()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T14:09:40 IDT" name="testMainPageHeaders" finished-at="2021-08-16T14:09:40 IDT" duration-ms="77" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testMainPageHeaders -->
-        <test-method signature="clickHomeButton()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T12:43:55 IDT" name="clickHomeButton" finished-at="2021-08-16T12:43:56 IDT" duration-ms="161" status="PASS">
+        <test-method signature="clickHomeButton()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T14:09:40 IDT" name="clickHomeButton" finished-at="2021-08-16T14:09:40 IDT" duration-ms="113" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickHomeButton -->
-        <test-method signature="clickLoginButton()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T12:43:56 IDT" name="clickLoginButton" finished-at="2021-08-16T12:43:56 IDT" duration-ms="58" status="FAIL">
+        <test-method signature="clickLoginButton()[pri:0, instance:main.java.MainPageTest@446293d]" started-at="2021-08-16T14:09:40 IDT" name="clickLoginButton" finished-at="2021-08-16T14:09:40 IDT" duration-ms="90" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [Address Book - Sign In] but found [Address Book]]]>
@@ -68,87 +68,87 @@ at java.base/java.lang.Thread.run(Thread.java:834)
         </test-method> <!-- clickLoginButton -->
       </class> <!-- main.java.MainPageTest -->
       <class name="main.java.SignInPageTest">
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:43:56 IDT" name="beforeClass" finished-at="2021-08-16T12:43:57 IDT" duration-ms="1719" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:40 IDT" name="beforeClass" finished-at="2021-08-16T14:09:42 IDT" duration-ms="1721" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:43:57 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:13 IDT" duration-ms="15796" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:42 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:43 IDT" duration-ms="1297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testSignInPageTitle()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:13 IDT" name="testSignInPageTitle" finished-at="2021-08-16T12:44:13 IDT" duration-ms="9" status="PASS">
+        <test-method signature="testSignInPageTitle()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:43 IDT" name="testSignInPageTitle" finished-at="2021-08-16T14:09:43 IDT" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSignInPageTitle -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:13 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:13 IDT" duration-ms="273" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:43 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:44 IDT" duration-ms="305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testSignInPageElementsExist()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:13 IDT" name="testSignInPageElementsExist" finished-at="2021-08-16T12:44:14 IDT" duration-ms="133" status="PASS">
+        <test-method signature="testSignInPageElementsExist()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:44 IDT" name="testSignInPageElementsExist" finished-at="2021-08-16T14:09:44 IDT" duration-ms="118" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSignInPageElementsExist -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:14 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:14 IDT" duration-ms="243" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:44 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:44 IDT" duration-ms="224" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testBadCredentialsInForm()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:14 IDT" name="testBadCredentialsInForm" finished-at="2021-08-16T12:44:16 IDT" duration-ms="2486" status="PASS">
+        <test-method signature="testBadCredentialsInForm()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:44 IDT" name="testBadCredentialsInForm" finished-at="2021-08-16T14:09:46 IDT" duration-ms="2380" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testBadCredentialsInForm -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:16 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:17 IDT" duration-ms="245" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:46 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:47 IDT" duration-ms="231" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="clickSignUpButton()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:17 IDT" name="clickSignUpButton" finished-at="2021-08-16T12:44:17 IDT" duration-ms="516" status="PASS">
+        <test-method signature="clickSignUpButton()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:47 IDT" name="clickSignUpButton" finished-at="2021-08-16T14:09:47 IDT" duration-ms="524" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- clickSignUpButton -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:17 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:17 IDT" duration-ms="237" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:47 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:47 IDT" duration-ms="222" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="signIn()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:17 IDT" name="signIn" finished-at="2021-08-16T12:44:18 IDT" duration-ms="688" status="PASS">
+        <test-method signature="signIn()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:47 IDT" name="signIn" finished-at="2021-08-16T14:09:48 IDT" duration-ms="668" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signIn -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T12:44:18 IDT" name="afterClass" finished-at="2021-08-16T12:44:18 IDT" duration-ms="68" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:main.java.SignInPageTest@2df9b86]" started-at="2021-08-16T14:09:48 IDT" name="afterClass" finished-at="2021-08-16T14:09:48 IDT" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- main.java.SignInPageTest -->
     </test> <!-- C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-FirstFunctionality -->
-    <test started-at="2021-08-16T12:43:51 IDT" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-SecondFunctionality" finished-at="2021-08-16T12:45:00 IDT" duration-ms="68866">
+    <test started-at="2021-08-16T14:09:36 IDT" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-SecondFunctionality" finished-at="2021-08-16T14:10:19 IDT" duration-ms="42513">
       <class name="main.java.AfterSignInTest">
-        <test-method is-config="true" signature="ChromeDriverInitialize()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:43:51 IDT" name="ChromeDriverInitialize" finished-at="2021-08-16T12:43:51 IDT" duration-ms="17" status="PASS">
+        <test-method is-config="true" signature="ChromeDriverInitialize()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:36 IDT" name="ChromeDriverInitialize" finished-at="2021-08-16T14:09:36 IDT" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ChromeDriverInitialize -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:43:51 IDT" name="beforeClass" finished-at="2021-08-16T12:44:20 IDT" duration-ms="28969" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:36 IDT" name="beforeClass" finished-at="2021-08-16T14:09:40 IDT" duration-ms="4226" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:20 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:21 IDT" duration-ms="356" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:40 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:41 IDT" duration-ms="372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="validateMainContents()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:21 IDT" name="validateMainContents" finished-at="2021-08-16T12:44:21 IDT" duration-ms="233" status="PASS">
+        <test-method signature="validateMainContents()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:41 IDT" name="validateMainContents" finished-at="2021-08-16T14:09:41 IDT" duration-ms="278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateMainContents -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:21 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:21 IDT" duration-ms="224" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:41 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:41 IDT" duration-ms="270" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testAddressBtn()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:21 IDT" name="testAddressBtn" finished-at="2021-08-16T12:44:22 IDT" duration-ms="580" status="PASS">
+        <test-method signature="testAddressBtn()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:41 IDT" name="testAddressBtn" finished-at="2021-08-16T14:09:42 IDT" duration-ms="866" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testAddressBtn -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:22 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:22 IDT" duration-ms="378" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:42 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:43 IDT" duration-ms="393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="createEmptyAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:22 IDT" name="createEmptyAddress" finished-at="2021-08-16T12:44:23 IDT" duration-ms="569" status="FAIL">
+        <test-method signature="createEmptyAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:43 IDT" name="createEmptyAddress" finished-at="2021-08-16T14:09:43 IDT" duration-ms="537" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [http://a.testaddressbook.com/addresses/new] but found [http://a.testaddressbook.com/addresses]]]>
@@ -191,11 +191,11 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createEmptyAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:23 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:23 IDT" duration-ms="231" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:43 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:43 IDT" duration-ms="244" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="createInvalidFirstNameAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:23 IDT" name="createInvalidFirstNameAddress" finished-at="2021-08-16T12:44:27 IDT" duration-ms="4258" status="FAIL">
+        <test-method signature="createInvalidFirstNameAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:43 IDT" name="createInvalidFirstNameAddress" finished-at="2021-08-16T14:09:48 IDT" duration-ms="4253" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -236,11 +236,11 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createInvalidFirstNameAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:27 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:27 IDT" duration-ms="233" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:48 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:48 IDT" duration-ms="246" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="createInvalidLastNameAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:27 IDT" name="createInvalidLastNameAddress" finished-at="2021-08-16T12:44:32 IDT" duration-ms="4279" status="FAIL">
+        <test-method signature="createInvalidLastNameAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:48 IDT" name="createInvalidLastNameAddress" finished-at="2021-08-16T14:09:52 IDT" duration-ms="4279" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -281,11 +281,11 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createInvalidLastNameAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:32 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:32 IDT" duration-ms="233" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:52 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:52 IDT" duration-ms="227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="createInvalidZipCodeAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:32 IDT" name="createInvalidZipCodeAddress" finished-at="2021-08-16T12:44:36 IDT" duration-ms="4208" status="FAIL">
+        <test-method signature="createInvalidZipCodeAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:52 IDT" name="createInvalidZipCodeAddress" finished-at="2021-08-16T14:09:57 IDT" duration-ms="4261" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -326,11 +326,11 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createInvalidZipCodeAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:36 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:36 IDT" duration-ms="236" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:57 IDT" name="beforeMethod" finished-at="2021-08-16T14:09:57 IDT" duration-ms="250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="createInvalidAgeAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:36 IDT" name="createInvalidAgeAddress" finished-at="2021-08-16T12:44:41 IDT" duration-ms="4344" status="FAIL">
+        <test-method signature="createInvalidAgeAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:09:57 IDT" name="createInvalidAgeAddress" finished-at="2021-08-16T14:10:01 IDT" duration-ms="4341" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -371,11 +371,11 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createInvalidAgeAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:41 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:41 IDT" duration-ms="246" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:01 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:01 IDT" duration-ms="265" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="createInvalidBirthdayAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:41 IDT" name="createInvalidBirthdayAddress" finished-at="2021-08-16T12:44:45 IDT" duration-ms="4316" status="FAIL">
+        <test-method signature="createInvalidBirthdayAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:01 IDT" name="createInvalidBirthdayAddress" finished-at="2021-08-16T14:10:06 IDT" duration-ms="4626" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -416,33 +416,33 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createInvalidBirthdayAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:45 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:45 IDT" duration-ms="236" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:06 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:06 IDT" duration-ms="297" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="createValidAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:45 IDT" name="createValidAddress" finished-at="2021-08-16T12:44:47 IDT" duration-ms="1267" status="PASS">
+        <test-method signature="createValidAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:06 IDT" name="createValidAddress" finished-at="2021-08-16T14:10:08 IDT" duration-ms="1376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createValidAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:47 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:47 IDT" duration-ms="244" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:08 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:08 IDT" duration-ms="243" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="editAddressCorrectlyAfterCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:47 IDT" name="editAddressCorrectlyAfterCreation" finished-at="2021-08-16T12:44:50 IDT" duration-ms="3074" status="PASS">
+        <test-method signature="editAddressCorrectlyAfterCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:08 IDT" name="editAddressCorrectlyAfterCreation" finished-at="2021-08-16T14:10:10 IDT" duration-ms="1959" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editAddressCorrectlyAfterCreation -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:50 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:50 IDT" duration-ms="241" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:10 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:10 IDT" duration-ms="241" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="editAddressIncorrectlyAfterCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:50 IDT" name="editAddressIncorrectlyAfterCreation" finished-at="2021-08-16T12:44:53 IDT" duration-ms="2989" status="FAIL">
+        <test-method signature="editAddressIncorrectlyAfterCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:10 IDT" name="editAddressIncorrectlyAfterCreation" finished-at="2021-08-16T14:10:12 IDT" duration-ms="2016" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [http://a.testaddressbook.com/addresses/8770] but found [http://a.testaddressbook.com/addresses/8770/edit]]]>
+              <![CDATA[expected [http://a.testaddressbook.com/addresses/8779] but found [http://a.testaddressbook.com/addresses/8779/edit]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [http://a.testaddressbook.com/addresses/8770] but found [http://a.testaddressbook.com/addresses/8770/edit]
+              <![CDATA[java.lang.AssertionError: expected [http://a.testaddressbook.com/addresses/8779] but found [http://a.testaddressbook.com/addresses/8779/edit]
 at org.testng.Assert.fail(Assert.java:99)
 at org.testng.Assert.failNotEquals(Assert.java:1037)
 at org.testng.Assert.assertEqualsImpl(Assert.java:140)
@@ -479,27 +479,27 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editAddressIncorrectlyAfterCreation -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:53 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:53 IDT" duration-ms="273" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:12 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:12 IDT" duration-ms="209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="listAddressAfterCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:53 IDT" name="listAddressAfterCreation" finished-at="2021-08-16T12:44:56 IDT" duration-ms="2669" status="PASS">
+        <test-method signature="listAddressAfterCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:12 IDT" name="listAddressAfterCreation" finished-at="2021-08-16T14:10:15 IDT" duration-ms="2419" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- listAddressAfterCreation -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:56 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:56 IDT" duration-ms="258" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:15 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:15 IDT" duration-ms="245" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="listAddressBeforeCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:56 IDT" name="listAddressBeforeCreation" finished-at="2021-08-16T12:44:58 IDT" duration-ms="1327" status="PASS">
+        <test-method signature="listAddressBeforeCreation()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:15 IDT" name="listAddressBeforeCreation" finished-at="2021-08-16T14:10:16 IDT" duration-ms="1248" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- listAddressBeforeCreation -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:58 IDT" name="beforeMethod" finished-at="2021-08-16T12:44:58 IDT" duration-ms="227" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:16 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:17 IDT" duration-ms="244" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="destroyAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:58 IDT" name="destroyAddress" finished-at="2021-08-16T12:44:59 IDT" duration-ms="1366" status="FAIL">
+        <test-method signature="destroyAddress()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:17 IDT" name="destroyAddress" finished-at="2021-08-16T14:10:18 IDT" duration-ms="1298" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -540,15 +540,15 @@ at java.base/java.lang.Thread.run(Thread.java:834)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- destroyAddress -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:44:59 IDT" name="beforeMethod" finished-at="2021-08-16T12:45:00 IDT" duration-ms="257" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:18 IDT" name="beforeMethod" finished-at="2021-08-16T14:10:18 IDT" duration-ms="244" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="signOut()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:45:00 IDT" name="signOut" finished-at="2021-08-16T12:45:00 IDT" duration-ms="464" status="PASS">
+        <test-method signature="signOut()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:18 IDT" name="signOut" finished-at="2021-08-16T14:10:19 IDT" duration-ms="438" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signOut -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T12:45:00 IDT" name="afterClass" finished-at="2021-08-16T12:45:00 IDT" duration-ms="49" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:main.java.AfterSignInTest@e15b7e8]" started-at="2021-08-16T14:10:19 IDT" name="afterClass" finished-at="2021-08-16T14:10:19 IDT" duration-ms="68" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
