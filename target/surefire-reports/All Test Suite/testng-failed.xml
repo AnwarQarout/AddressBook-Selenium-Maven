@@ -1,58 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" parallel="tests" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-FirstFunctionality(failed)" verbose="0">
+    <classes>
+      <class name="main.java.MainPageTest">
+        <methods>
+          <include name="ChromeDriverInitialize"/>
+          <include name="clickLoginButton"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- main.java.MainPageTest -->
+    </classes>
+  </test> <!-- C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-FirstFunctionality(failed) -->
   <test thread-count="5" parallel="tests" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-SecondFunctionality(failed)" verbose="0">
     <classes>
       <class name="main.java.AfterSignInTest">
         <methods>
           <include name="ChromeDriverInitialize"/>
           <include name="afterClass"/>
+          <include name="createInvalidFirstNameAddress"/>
           <include name="createInvalidZipCodeAddress"/>
+          <include name="beforeClass"/>
           <include name="destroyAddress"/>
-          <include name="editAddressCorrectlyAfterCreation"/>
           <include name="createInvalidAgeAddress"/>
           <include name="beforeMethod"/>
+          <include name="createInvalidBirthdayAddress"/>
           <include name="editAddressIncorrectlyAfterCreation"/>
           <include name="createEmptyAddress"/>
           <include name="createInvalidLastNameAddress"/>
-          <include name="createValidAddress"/>
-          <include name="createInvalidFirstNameAddress"/>
-          <include name="beforeClass"/>
-          <include name="testAddressBtn"/>
-          <include name="listAddressAfterCreation"/>
-          <include name="signOut"/>
-          <include name="createInvalidBirthdayAddress"/>
-          <include name="listAddressBeforeCreation"/>
-          <include name="validateMainContents"/>
         </methods>
       </class> <!-- main.java.AfterSignInTest -->
     </classes>
   </test> <!-- C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-SecondFunctionality(failed) -->
-  <test thread-count="5" parallel="tests" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-FirstFunctionality(failed)" verbose="0">
-    <classes>
-      <class name="main.java.SignInPageTest">
-        <methods>
-          <include name="ChromeDriverInitialize"/>
-          <include name="signIn"/>
-          <include name="testSignInPageElementsExist"/>
-          <include name="afterClass"/>
-          <include name="testSignInPageTitle"/>
-          <include name="clickSignUpButton"/>
-          <include name="beforeMethod"/>
-          <include name="testBadCredentialsInForm"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- main.java.SignInPageTest -->
-      <class name="main.java.MainPageTest">
-        <methods>
-          <include name="ChromeDriverInitialize"/>
-          <include name="clickHomeButton"/>
-          <include name="testMainPageTitle"/>
-          <include name="clickLoginButton"/>
-          <include name="testMainPageHeaders"/>
-          <include name="beforeClass"/>
-        </methods>
-      </class> <!-- main.java.MainPageTest -->
-    </classes>
-  </test> <!-- C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-FirstFunctionality(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->
