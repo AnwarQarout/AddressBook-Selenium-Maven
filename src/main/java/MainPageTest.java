@@ -1,16 +1,18 @@
 package main.java;
 
 
+import main.Classes.MainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
 public class MainPageTest extends ChromeDriverInit{
-    ChromeDriver driver;
+    public static ChromeDriver driver;
 
     public MainPageTest() {
     }
@@ -39,44 +41,35 @@ public class MainPageTest extends ChromeDriverInit{
 
     @Test
     public void testMainPageTitle() {
-        String expectedTitle = "Address Book";
+        MainPage mainPage = PageFactory.initElements(driver,MainPage.class);
         String actualTitle = driver.getTitle();
+        String expectedTitle = "Address Book";
         Assert.assertEquals(expectedTitle, actualTitle);
-
     }
 
     @Test
     public void testMainPageHeaders(){
-        WebElement mainHeader = driver.findElement(By.xpath("//div[@class='text-center']//child::h1"));
-
+        MainPage mainPage = PageFactory.initElements(driver,MainPage.class);
         String expectedMainHeader = "Welcome to Address Book";
-        Assert.assertEquals(expectedMainHeader, mainHeader.getText());
+        Assert.assertEquals(expectedMainHeader, mainPage.getMainHeader());
 
         String expectedSubHeader = "A simple web app for showing off your testing";
-        WebElement subHeader = driver.findElement(By.xpath("//div[@class='text-center']//descendant::h4"));
-        Assert.assertEquals(expectedSubHeader, subHeader.getText());
-
+        Assert.assertEquals(expectedSubHeader, mainPage.getSubHeader());
     }
     @Test
     public void clickHomeButton(){
-        WebElement homeLink = driver.findElement(By.xpath("//a[contains(@class,'nav')][@data-test='home']"));
-        homeLink.click();
-
+        MainPage mainPage = PageFactory.initElements(driver,MainPage.class);
+        mainPage.clickHomeButton();
         testMainPageTitle();
         testMainPageHeaders();
-
-        Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='home']//span[@class='sr-only']")).isEmpty());
-
-
     }
 
     @Test
    public void clickLoginButton(){
-        WebElement signInLink = driver.findElement(By.xpath("//a[@id='sign-in'][text()='Sign in']"));
-        signInLink.click();
+        MainPage mainPage = PageFactory.initElements(driver,MainPage.class);
+        mainPage.clickSignInButton();
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle,"Address Book - Sign In");
-
         Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='sign-in']//span[@class='sr-only']")).isEmpty());
     }
 }

@@ -1,9 +1,11 @@
 package main.java;
 
+import main.Classes.SignInPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -55,8 +57,8 @@ public class SignInPageTest extends ChromeDriverInit {
     @Test
     public void testSignInPageElementsExist(){
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        WebElement signInHeader = driver.findElement(By.xpath("//div[@id='clearance']//child::h2"));
-        String actualText = signInHeader.getText();
+        SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
+        String actualText = signInPage.getSignInHeader();
 
         //assert that every element exists
         Assert.assertEquals(actualText,"Sign in");
@@ -64,103 +66,69 @@ public class SignInPageTest extends ChromeDriverInit {
         Assert.assertFalse(driver.findElements(By.xpath("//input[@placeholder='Password'][@type='password']")).isEmpty());
         Assert.assertFalse(driver.findElements(By.xpath("//input[@type='submit'][@value='Sign in']")).isEmpty());
         Assert.assertFalse(driver.findElements(By.xpath("//a[@href='/sign_up'][text()='Sign up']")).isEmpty());
-
-
-
     }
 
     /* Method to enter empty credentials, or empty username */
     @Test
     public void testBadCredentialsInForm(){
-
+        SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
         //submit without entering anything
-        WebElement submitBtn = driver.findElement(By.xpath("//input[@type='submit'][@value='Sign in']"));
-        submitBtn.click();
+        signInPage.clickSignInBtn();
         Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
 
         //only enter password
         driver.get(URL);
 
-        WebElement passwordField = driver.findElement(By.xpath("//input[@placeholder='Password'][@type='password']"));
-        passwordField.sendKeys(badPassword);
+        signInPage.setPassword(badPassword);
 
-        submitBtn = driver.findElement(By.xpath("//input[@type='submit'][@value='Sign in']"));
-        submitBtn.click();
+        signInPage.clickSignInBtn();
 
         Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
 
         //enter invalid username and password
         driver.get(URL);
 
-        WebElement usernameField = driver.findElement(By.xpath("//input[@type='email'][@placeholder='Email']"));
-        usernameField.sendKeys(badUsername);
+        signInPage.setEmail(badUsername);
 
-        passwordField = driver.findElement(By.xpath("//input[@placeholder='Password'][@type='password']"));
-        passwordField.sendKeys(badPassword);
+        signInPage.setEmail(badPassword);
 
-        submitBtn = driver.findElement(By.xpath("//input[@type='submit'][@value='Sign in']"));
-        submitBtn.click();
+        signInPage.clickSignInBtn();
 
         Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
 
         // Only enter username
         driver.get(URL);
-        usernameField = driver.findElement(By.xpath("//input[@type='email'][@placeholder='Email']"));
-        usernameField.sendKeys(badUsername);
+        signInPage.setEmail(validUsername);
 
-        submitBtn = driver.findElement(By.xpath("//input[@type='submit'][@value='Sign in']"));
-        submitBtn.click();
+        signInPage.clickSignInBtn();
 
         Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
 
         // enter invalid username with no @ in it
         driver.get(URL);
-        usernameField = driver.findElement(By.xpath("//input[@type='email'][@placeholder='Email']"));
-        usernameField.sendKeys(invalidEmail);
+        signInPage.setEmail(invalidEmail);
 
-        submitBtn = driver.findElement(By.xpath("//input[@type='submit'][@value='Sign in']"));
-        submitBtn.click();
+        signInPage.clickSignInBtn();
 
         Assert.assertEquals(URL,driver.getCurrentUrl());
-
-    }
-
-    /* Only enter a username */
-    @Test
-    public void clickSignUpButton(){
-        WebElement signUpBtn = driver.findElement(By.xpath("//a[@href='/sign_up'][text()='Sign up']"));
-        signUpBtn.click();
-        Assert.assertEquals("http://a.testaddressbook.com/sign_up",driver.getCurrentUrl());
-
-        WebElement usernameField = driver.findElement(By.xpath("//input[@type='email'][@placeholder='Email']"));
-        usernameField.sendKeys(validUsername);
-
-        WebElement passwordField = driver.findElement(By.xpath("//input[@placeholder='Password'][@type='password']"));
-        passwordField.sendKeys(validPassword);
-
-        WebElement submitBtn = driver.findElement(By.xpath("//input[@type='submit'][@value='Sign up']"));
-        submitBtn.click();
-
-        Assert.assertEquals("http://a.testaddressbook.com/users",driver.getCurrentUrl());
-
-
-
-
     }
 
     @Test
     public void signIn(){
-        WebElement usernameField = driver.findElement(By.xpath("//input[@type='email'][@placeholder='Email']"));
-        usernameField.sendKeys(validUsername);
+        SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
+        signInPage.setEmail(validUsername);
 
-        WebElement passwordField = driver.findElement(By.xpath("//input[@placeholder='Password'][@type='password']"));
-        passwordField.sendKeys(validPassword);
+        signInPage.setPassword(validPassword);
 
-        WebElement submitBtn = driver.findElement(By.xpath("//input[@type='submit'][@value='Sign in']"));
-        submitBtn.click();
+        signInPage.clickSignInBtn();
 
         Assert.assertEquals("http://a.testaddressbook.com/",driver.getCurrentUrl());
-
     }
 
+    @Test
+    public void clickSignUpButton(){
+        SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
+        signInPage.clickSignUpBtn();
+        Assert.assertEquals("http://a.testaddressbook.com/sign_up",driver.getCurrentUrl());
+    }
 }

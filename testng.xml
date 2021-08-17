@@ -30,7 +30,7 @@
 
     <test verbose="2" preserve-order="true" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-SecondFunctionality">
         <classes>
-            <class name="main.java.AfterSignInTest">
+            <class name="main.java.LoggedInPageTest">
                 <methods>
                     <include name="validateMainContents"/>
                     <include name="testAddressBtn"/>
