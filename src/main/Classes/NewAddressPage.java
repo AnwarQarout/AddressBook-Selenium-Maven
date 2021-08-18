@@ -81,6 +81,10 @@ public class NewAddressPage {
         zipCode.sendKeys(text);
     }
 
+    public void clearLastName(){
+        lastName.clear();
+    }
+
     public void createValidAddressWithArgs(String name1, String name2, String addr, String City, String zip) {
 
         firstName.click();

@@ -16,6 +16,14 @@
                     <include name="clickLoginButton"/>
                 </methods>
             </class>
+            <class name="main.java.SignUpPageTest">
+                <methods>
+                    <include name="testSignUpPageTitle"/>
+                    <include name="validSignUpTest"/>
+                    <include name="invalidSignUpTest"/>
+                    <include name="clickSignIn"/>
+                </methods>
+            </class>
             <class name="main.java.SignInPageTest">
                 <methods>
                     <include name="testSignInPageTitle"/>
@@ -33,7 +41,18 @@
             <class name="main.java.LoggedInPageTest">
                 <methods>
                     <include name="validateMainContents"/>
-                    <include name="testAddressBtn"/>
+                    <include name="addressBtn"/>
+                    <include name="signOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test verbose="2" preserve-order="true" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-Third">
+        <classes>
+            <class name="main.java.NewAddressPageTest">
+                <methods>
                     <include name="createEmptyAddress"/>
                     <include name="createInvalidFirstNameAddress"/>
                     <include name="createInvalidLastNameAddress"/>
@@ -41,14 +60,38 @@
                     <include name="createInvalidAgeAddress"/>
                     <include name="createInvalidBirthdayAddress"/>
                     <include name="createValidAddress"/>
-                    <include name="editAddressCorrectlyAfterCreation"/>
-                    <include name="editAddressIncorrectlyAfterCreation"/>
-                    <include name="listAddressAfterCreation"/>
-                    <include name="listAddressBeforeCreation"/>
-                    <include name="destroyAddress"/>
-                    <include name="signOut"/>
+                    <include name="listInvalidAddressBeforeCreation"/>
+                    <include name="listValidAddressBeforeCreation"/>
                 </methods>
             </class>
         </classes>
     </test>
+
+
+    <test verbose="2" preserve-order="true" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-4">
+        <classes>
+            <class name="main.java.AddressPageTest">
+                <methods>
+                    <include name="showAddress"/>
+                    <include name="testNewAddressBtn"/>
+                    <include name="destroyAddress"/>
+                    <include name="editAddress"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test verbose="2" preserve-order="true" name="C:/Users/Alqarout/IdeaProjects/FirstSeleniumTask-5">
+        <classes>
+            <class name="main.java.EditAddressPageTest">
+                <methods>
+                    <include name="editAddressCorrectlyAfterCreation"/>
+                    <include name="editAddressIncorrectlyAfterCreation"/>
+                    <include name="editAddressCorrectlyAtMainPage"/>
+                    <include name="listAddressAtMainPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite>
