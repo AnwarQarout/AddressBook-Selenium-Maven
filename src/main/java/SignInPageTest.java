@@ -75,6 +75,7 @@ public class SignInPageTest extends ChromeDriverInit {
         //submit without entering anything
         signInPage.clickSignInBtn();
         Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),URL);
 
         //only enter password
         driver.get(URL);
