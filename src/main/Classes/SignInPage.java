@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import main.resources.variables;
 
 public class SignInPage {
     ChromeDriver driver;
@@ -16,19 +17,19 @@ public class SignInPage {
         this.driver = driver;
     }
 
-    @FindBy(how = How.XPATH,using = "//div[@id='clearance']//child::h2")
+    @FindBy(how = How.XPATH,using = variables.signInHeader)
     WebElement signInHeader;
 
-    @FindBy(how = How.XPATH,using = "//input[@type='email'][@placeholder='Email']")
+    @FindBy(how = How.XPATH,using = variables.signInEmail)
     WebElement email;
 
-    @FindBy(how = How.XPATH,using = "//input[@placeholder='Password'][@type='password']")
+    @FindBy(how = How.XPATH,using = variables.signInPassword)
     WebElement password;
 
-    @FindBy(how = How.XPATH,using="//input[@type='submit'][@value='Sign in']")
+    @FindBy(how = How.XPATH,using=variables.signInButton)
     WebElement signInBtn;
 
-    @FindBy(how = How.XPATH,using = "//a[@href='/sign_up'][text()='Sign up']")
+    @FindBy(how = How.XPATH,using = variables.signUpButton)
     WebElement signUpBtn;
 
     public String getSignInHeader(){

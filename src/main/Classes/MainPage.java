@@ -1,6 +1,7 @@
 package main.Classes;
 
 import main.java.MainPageTest;
+import main.resources.variables;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
@@ -9,16 +10,16 @@ import org.openqa.selenium.support.How;
 public class MainPage {
     ChromeDriver driver;
 
-    @FindBy(how = How.XPATH, using = "// div[@class='text-center']//child::h1")
+    @FindBy(how = How.XPATH, using = variables.mainHeader)
     WebElement mainHeader;
 
-    @FindBy(how=How.XPATH,using = "// div[@class='text-center']//descendant::h4")
+    @FindBy(how=How.XPATH,using = variables.subHeader)
     WebElement subHeader;
 
-    @FindBy(how = How.XPATH,using = "//a[contains(@class,'nav')][@data-test='home']")
+    @FindBy(how = How.XPATH,using = variables.homeButton)
     WebElement homeButton;
 
-    @FindBy(how = How.XPATH,using = "//a[@id='sign-in'][text()='Sign in']")
+    @FindBy(how = How.XPATH,using = variables.signInBt)
     WebElement signInButton;
 
     public MainPage(){

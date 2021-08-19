@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SignInPageTest extends ChromeDriverInit {
 
-    final private String URL = "http://a.testaddressbook.com/sign_in";
      private ChromeDriver driver;
 
     public SignInPageTest(){
@@ -31,7 +30,7 @@ public class SignInPageTest extends ChromeDriverInit {
 
     @BeforeMethod
     public void beforeMethod(){
-        driver.get(URL);
+        driver.get(variables.signInURL);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 
@@ -59,10 +58,10 @@ public class SignInPageTest extends ChromeDriverInit {
 
         //assert that every element exists
         Assert.assertEquals(actualText,"Sign in");
-        Assert.assertFalse(driver.findElements(By.xpath("//input[@type='email'][@placeholder='Email']")).isEmpty());
-        Assert.assertFalse(driver.findElements(By.xpath("//input[@placeholder='Password'][@type='password']")).isEmpty());
-        Assert.assertFalse(driver.findElements(By.xpath("//input[@type='submit'][@value='Sign in']")).isEmpty());
-        Assert.assertFalse(driver.findElements(By.xpath("//a[@href='/sign_up'][text()='Sign up']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.emailXPath)).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.passwordXPath)).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.signInXPath)).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.signUpXPath)).isEmpty());
     }
 
     /* Method to enter empty credentials, or empty username */
@@ -71,20 +70,20 @@ public class SignInPageTest extends ChromeDriverInit {
         SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
         //submit without entering anything
         signInPage.clickSignInBtn();
-        Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),URL);
+        Assert.assertFalse(driver.findElements(By.xpath(variables.badEmailOrPasswordXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.signInURL);
 
         //only enter password
-        driver.get(URL);
+        driver.get(variables.signInURL);
 
         signInPage.setPassword(variables.badPassword);
 
         signInPage.clickSignInBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.badEmailOrPasswordXPath)).isEmpty());
 
         //enter invalid username and password
-        driver.get(URL);
+        driver.get(variables.signInURL);
 
         signInPage.setEmail(variables.badUsername);
 
@@ -92,23 +91,23 @@ public class SignInPageTest extends ChromeDriverInit {
 
         signInPage.clickSignInBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.badEmailOrPasswordXPath)).isEmpty());
 
         // Only enter username
-        driver.get(URL);
+        driver.get(variables.signInURL);
         signInPage.setEmail(variables.validUsername);
 
         signInPage.clickSignInBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Bad email or password.']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.badEmailOrPasswordXPath)).isEmpty());
 
         // enter invalid username with no @ in it
-        driver.get(URL);
+        driver.get(variables.signInURL);
         signInPage.setEmail(variables.invalidEmail);
 
         signInPage.clickSignInBtn();
 
-        Assert.assertEquals(URL,driver.getCurrentUrl());
+        Assert.assertEquals(variables.signInURL,driver.getCurrentUrl());
     }
 
     @Test
@@ -120,13 +119,13 @@ public class SignInPageTest extends ChromeDriverInit {
 
         signInPage.clickSignInBtn();
 
-        Assert.assertEquals("http://a.testaddressbook.com/",driver.getCurrentUrl());
+        Assert.assertEquals(variables.URL,driver.getCurrentUrl());
     }
 
     @Test
     public void clickSignUpButton(){
         SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
         signInPage.clickSignUpBtn();
-        Assert.assertEquals("http://a.testaddressbook.com/sign_up",driver.getCurrentUrl());
+        Assert.assertEquals(variables.signUpURL,driver.getCurrentUrl());
     }
 }

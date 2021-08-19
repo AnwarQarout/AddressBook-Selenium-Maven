@@ -2,6 +2,7 @@ package main.java;
 
 
 import main.Classes.MainPage;
+import main.resources.variables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,7 +29,7 @@ public class MainPageTest extends ChromeDriverInit{
     public void beforeClass(){
         driver = new ChromeDriver(options);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-        driver.get("http://a.testaddressbook.com/");
+        driver.get(variables.URL);
         driver.manage().window().maximize();
     }
 
@@ -70,6 +71,6 @@ public class MainPageTest extends ChromeDriverInit{
         mainPage.clickSignInButton();
         String actualTitle = driver.getTitle();
         Assert.assertEquals(actualTitle,"Address Book - Sign In");
-        Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='sign-in']//span[@class='sr-only']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.signInCurrentSpanXPath)).isEmpty());
     }
 }

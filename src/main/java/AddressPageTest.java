@@ -1,6 +1,7 @@
 package main.java;
 
 import main.Classes.AddressPage;
+import main.Classes.NewAddressPage;
 import main.Classes.SignInPage;
 import org.openqa.selenium.By;
 import main.resources.variables;
@@ -22,11 +23,6 @@ public class AddressPageTest extends ChromeDriverInit {
 
     private ChromeDriver driver;
 
-    final private String URL = "http://a.testaddressbook.com/";
-    final private String addressURL = "http://a.testaddressbook.com/addresses";
-    final private String newAddressURL = "http://a.testaddressbook.com/addresses/new";
-
-
     public void SignIn(ChromeDriver driver){
         SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
         signInPage.setEmail(variables.validUsername);
@@ -42,8 +38,14 @@ public class AddressPageTest extends ChromeDriverInit {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
-        driver.get("http://a.testaddressbook.com/sign_in");
+        driver.get(variables.signInURL);
         SignIn(driver);
+
+        driver.get(variables.newAddressURL);
+        NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
+        newAddressPage.createValidAddressWithArgs(variables.validFirstName,variables.validSecondName,variables.validAddress,variables.validCity,variables.validZipCode);
+        newAddressPage.clickSubmitBtn();
+
     }
 
     @AfterClass
@@ -54,7 +56,7 @@ public class AddressPageTest extends ChromeDriverInit {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.get(addressURL);
+        driver.get(variables.addressURL);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
@@ -64,7 +66,7 @@ public class AddressPageTest extends ChromeDriverInit {
     public void testNewAddressBtn(){
         AddressPage addressPage = PageFactory.initElements(driver,AddressPage.class);
         addressPage.clickNewAddressBtn();
-        Assert.assertEquals(driver.getCurrentUrl(),newAddressURL);
+        Assert.assertEquals(driver.getCurrentUrl(),variables.newAddressURL);
     }
 
     @Test
@@ -98,7 +100,7 @@ public class AddressPageTest extends ChromeDriverInit {
 
         addressPage.clickEditButton();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//h2[text()='Editing Address']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.editingAddressXPath)).isEmpty());
 
     }
 

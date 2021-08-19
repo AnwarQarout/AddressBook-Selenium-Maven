@@ -4,24 +4,25 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import main.resources.variables;
 
 public class SignUpPage {
 
     ChromeDriver driver;
 
-    @FindBy(how = How.XPATH,using = "//div[@id='clearance']//child::h2")
+    @FindBy(how = How.XPATH,using = variables.signUpHeader)
     WebElement signUpHeader;
 
-    @FindBy(how = How.XPATH,using = "//input[@type='email'][@placeholder='Email']")
+    @FindBy(how = How.XPATH,using = variables.email)
     WebElement email;
 
-    @FindBy(how = How.XPATH,using = "//input[@placeholder='Password'][@type='password']")
+    @FindBy(how = How.XPATH,using = variables.password)
     WebElement password;
 
-    @FindBy(how = How.XPATH,using="//input[@type='submit'][@value='Sign up']")
+    @FindBy(how = How.XPATH,using=variables.signUpBtn)
     WebElement signUpBtn;
 
-    @FindBy(how = How.XPATH,using = "//a[@href='/sign_in'][text()='Sign in']")
+    @FindBy(how = How.XPATH,using = variables.signInBtn)
     WebElement signInBtn;
 
     public SignUpPage(){

@@ -1,6 +1,7 @@
 package main.Classes;
 
 import main.java.ChromeDriverInit;
+import main.resources.variables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,31 +11,31 @@ import org.openqa.selenium.support.How;
 public class NewAddressPage {
     ChromeDriver driver;
 
-    @FindBy(how = How.XPATH,using = "//input[@type='submit']")
+    @FindBy(how = How.XPATH,using = variables.submitBtn)
     WebElement submitBtn;
 
-    @FindBy(how = How.XPATH,using = "//input[@id=\"address_first_name\"]")
+    @FindBy(how = How.XPATH,using = variables.addressFirstName)
     WebElement firstName;
 
-    @FindBy(how = How.XPATH,using = "//input[@id=\"address_last_name\"]")
+    @FindBy(how = How.XPATH,using = variables.addressLastName)
     WebElement lastName;
 
-    @FindBy(how = How.XPATH,using = "//input[@id=\"address_street_address\"]")
+    @FindBy(how = How.XPATH,using = variables.addressAdress)
     WebElement address1;
 
-    @FindBy(how = How.XPATH,using = "//input[@id='address_city']")
+    @FindBy(how = How.XPATH,using = variables.addressCity)
     WebElement city;
 
-    @FindBy(how = How.XPATH,using = "//input[@id=\"address_zip_code\"]")
+    @FindBy(how = How.XPATH,using = variables.addressZipCode)
     WebElement zipCode;
 
-    @FindBy(how = How.XPATH,using = "//input[@id='address_age']")
+    @FindBy(how = How.XPATH,using = variables.addressAge)
     WebElement age;
 
-    @FindBy(how = How.XPATH,using = "//input[@type='date']")
+    @FindBy(how = How.XPATH,using = variables.addressBirthday)
     WebElement birthday;
 
-    @FindBy(how = How.XPATH,using = "//a[@data-test='list'][text()='List']")
+    @FindBy(how = How.XPATH,using = variables.addressListBtn)
     WebElement listBtn;
 
 

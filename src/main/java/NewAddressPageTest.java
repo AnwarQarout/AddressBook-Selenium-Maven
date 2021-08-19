@@ -1,4 +1,5 @@
 package main.java;
+import main.Classes.EditAddressPage;
 import main.resources.variables;
 import main.Classes.NewAddressPage;
 import main.Classes.SignInPage;
@@ -19,11 +20,6 @@ import java.util.concurrent.TimeUnit;
 
 public class NewAddressPageTest extends ChromeDriverInit {
     private ChromeDriver driver;
-
-    final private String URL = "http://a.testaddressbook.com/";
-    final private String addressURL = "http://a.testaddressbook.com/addresses";
-    final private String newAddressURL = "http://a.testaddressbook.com/addresses/new";
-
 
     public NewAddressPageTest(){
 
@@ -46,7 +42,7 @@ public class NewAddressPageTest extends ChromeDriverInit {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
-        driver.get("http://a.testaddressbook.com/sign_in");
+        driver.get(variables.signInURL);
         SignIn(driver);
     }
 
@@ -58,7 +54,7 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver.get(newAddressURL);
+        driver.get(variables.newAddressURL);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
@@ -67,8 +63,8 @@ public class NewAddressPageTest extends ChromeDriverInit {
     public void createEmptyAddress(){
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
         newAddressPage.clickSubmitBtn();
-        Assert.assertFalse(driver.findElements(By.xpath("//ul")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),newAddressURL); //new
+        Assert.assertFalse(driver.findElements(By.xpath(variables.ulXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.newAddressURL); //new
     }
 
     @Test
@@ -78,8 +74,8 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
        newAddressPage.clickSubmitBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//ul")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),newAddressURL); //new
+        Assert.assertFalse(driver.findElements(By.xpath(variables.ulXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.newAddressURL); //new
     }
 
     @Test
@@ -89,8 +85,8 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
         newAddressPage.clickSubmitBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//ul")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),newAddressURL); //new
+        Assert.assertFalse(driver.findElements(By.xpath(variables.ulXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.newAddressURL); //new
     }
 
     @Test
@@ -100,8 +96,8 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
         newAddressPage.clickSubmitBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//ul")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),newAddressURL); //new
+        Assert.assertFalse(driver.findElements(By.xpath(variables.ulXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.newAddressURL); //new
 
     }
 
@@ -122,8 +118,8 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
         newAddressPage.clickSubmitBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//ul")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),newAddressURL); //new
+        Assert.assertFalse(driver.findElements(By.xpath(variables.ulXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.newAddressURL); //new
     }
 
     @Test
@@ -151,8 +147,8 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
         newAddressPage.clickSubmitBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//ul")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),newAddressURL); //new
+        Assert.assertFalse(driver.findElements(By.xpath(variables.ulXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.newAddressURL); //new
 
     }
 
@@ -163,11 +159,17 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
         newAddressPage.clickSubmitBtn();
 
-        Assert.assertNotEquals(driver.getCurrentUrl(),newAddressURL); //new
-        Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Address was successfully created.']")).isEmpty());
+        Assert.assertNotEquals(driver.getCurrentUrl(),variables.newAddressURL); //new
+        Assert.assertFalse(driver.findElements(By.xpath(variables.addressSuccessfullyCreatedXPath)).isEmpty());
+
+        EditAddressPage editAddressPage = PageFactory.initElements(driver,EditAddressPage.class);
+        editAddressPage.clickListBtn();
+
+        Assert.assertFalse(driver.findElements(By.xpath(variables.firstNameExistInAddressXPath)).isEmpty());
+
     }
 
-    @Test
+   /* @Test
     public void listInvalidAddressBeforeCreation() {
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
 
@@ -185,5 +187,5 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
         Assert.assertEquals(driver.getCurrentUrl(), addressURL);
         Assert.assertFalse(driver.findElements(By.xpath("//tr//td[text()='" + variables.validFirstName + "']")).isEmpty());
-    }
+    }*/
 }

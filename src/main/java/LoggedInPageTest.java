@@ -22,24 +22,6 @@ import java.util.concurrent.TimeUnit;
 public class LoggedInPageTest extends ChromeDriverInit {
     private ChromeDriver driver;
 
-    final private String invalidSecondName = "qarout232";
-    final private String invalidZipCode = "12345sad";
-    final private String invalidAddress = "";
-    final private String invalidCity = "";
-
-    final  private String validFirstName = "anwar";
-    final private String validSecondName = "qarout";
-    final private String validZipCode = "12345";
-    final private String validAddress = "Ramallah";
-    final private String validCity = "Ramallah";
-
-    final private String URL = "http://a.testaddressbook.com/";
-    final private String addressURL = "http://a.testaddressbook.com/addresses";
-    final private String newAddressURL = "http://a.testaddressbook.com/addresses/new";
-
-
-
-
 
     public LoggedInPageTest(){
 
@@ -61,7 +43,7 @@ public class LoggedInPageTest extends ChromeDriverInit {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
-        driver.get("http://a.testaddressbook.com/sign_in");
+        driver.get(variables.signInURL);
         SignIn(driver);
     }
 
@@ -74,7 +56,7 @@ public class LoggedInPageTest extends ChromeDriverInit {
 
     @BeforeMethod
     public void beforeMethod(){
-        driver.get(URL);
+        driver.get(variables.URL);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
     }
@@ -84,8 +66,8 @@ public class LoggedInPageTest extends ChromeDriverInit {
     public void validateMainContents(){
         LoggedInPage loggedInPage = PageFactory.initElements(driver,LoggedInPage.class);
 
-        Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='home']//span[@class='sr-only']")).isEmpty());
-        Assert.assertEquals(driver.getCurrentUrl(),URL);
+        Assert.assertFalse(driver.findElements(By.xpath(variables.homeCurrentSpanXPath)).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.URL);
 
 
         String expectedMainHeader = "Welcome to Address Book";
@@ -94,25 +76,25 @@ public class LoggedInPageTest extends ChromeDriverInit {
         String expectedSubHeader = "A simple web app for showing off your testing";
         Assert.assertEquals(expectedSubHeader, loggedInPage.getSubHeader());
 
-        Assert.assertFalse(driver.findElements(By.xpath("//a[text()='Sign out']")).isEmpty());
-        Assert.assertFalse(driver.findElements(By.xpath("//a[text()='Addresses']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.signOutTextXPath)).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.addressTextXPath)).isEmpty());
 
-        Assert.assertFalse(driver.findElements(By.xpath("//span[@class='navbar-text'][text()='"+variables.validUsername+"']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.XPathByValidUserName)).isEmpty());
     }
 
     @Test
     public void addressBtn(){
         LoggedInPage loggedInPage = PageFactory.initElements(driver,LoggedInPage.class);
         loggedInPage.clickAddressBtn();
-        Assert.assertEquals(driver.getCurrentUrl(),addressURL);
-        Assert.assertFalse(driver.findElements(By.xpath("//a[@data-test='addresses']//span[@class='sr-only']")).isEmpty());
+        Assert.assertEquals(driver.getCurrentUrl(),variables.addressURL);
+        Assert.assertFalse(driver.findElements(By.xpath(variables.addressCurrentSpanXPath)).isEmpty());
     }
 
     @Test
     public void signOut(){
         LoggedInPage loggedInPage = PageFactory.initElements(driver,LoggedInPage.class);
         loggedInPage.clickSignOutBtn();
-        Assert.assertEquals(driver.getCurrentUrl(),"http://a.testaddressbook.com/sign_in");
+        Assert.assertEquals(driver.getCurrentUrl(),variables.signInURL);
     }
 
 

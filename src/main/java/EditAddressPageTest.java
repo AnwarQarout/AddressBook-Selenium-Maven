@@ -40,7 +40,7 @@ public class EditAddressPageTest extends ChromeDriverInit {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().deleteAllCookies();
-        driver.get("http://a.testaddressbook.com/sign_in");
+        driver.get(variables.signInURL);
         SignIn(driver);
     }
 
@@ -64,16 +64,16 @@ public class EditAddressPageTest extends ChromeDriverInit {
     public void editAddressCorrectlyAfterCreation(){
         EditAddressPage editAddressPage = PageFactory.initElements(driver,EditAddressPage.class);
         editAddressPage.clickEditBtn();
-        Assert.assertFalse(driver.findElements(By.xpath("//h2[text()='Editing Address']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.editingAddressXPath)).isEmpty());
         editAddressPage.clickUpdateBtn();
-        Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Address was successfully updated.']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.updatedXPath)).isEmpty());
     }
 
     @Test
     public void editAddressIncorrectlyAfterCreation(){
         EditAddressPage editAddressPage = PageFactory.initElements(driver,EditAddressPage.class);
         editAddressPage.clickEditBtn();
-        Assert.assertFalse(driver.findElements(By.xpath("//h2[text()='Editing Address']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.editingAddressXPath)).isEmpty());
 
         String beforeEdit = driver.getCurrentUrl();
 
@@ -88,32 +88,32 @@ public class EditAddressPageTest extends ChromeDriverInit {
 
         String afterEdit = driver.getCurrentUrl();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//ul")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.ulXPath)).isEmpty());
         Assert.assertEquals(beforeEdit,afterEdit);
     }
 
     @Test
     public void editAddressCorrectlyAtMainPage(){
-        driver.get("http://a.testaddressbook.com/addresses");
+        driver.get(variables.addressURL);
 
         EditAddressPage editAddressPage = PageFactory.initElements(driver,EditAddressPage.class);
         editAddressPage.clickEditBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//h2[text()='Editing Address']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.editingAddressXPath)).isEmpty());
 
         editAddressPage.clickUpdateBtn();
-        Assert.assertFalse(driver.findElements(By.xpath("//div[contains(@class,'alert')][text()='Address was successfully updated.']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.updatedXPath)).isEmpty());
     }
 
     @Test
     public void listAddressAtMainPage(){
-        driver.get("http://a.testaddressbook.com/addresses");
+        driver.get(variables.addressURL);
         AddressPage addressPage = PageFactory.initElements(driver,AddressPage.class);
         String beforeUpdate = addressPage.getFirstNameOfFirstAddress();
         EditAddressPage editAddressPage = PageFactory.initElements(driver,EditAddressPage.class);
         editAddressPage.clickEditBtn();
 
-        Assert.assertFalse(driver.findElements(By.xpath("//h2[text()='Editing Address']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath(variables.editingAddressXPath)).isEmpty());
 
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
         newAddressPage.setFirstName("-concat-test");

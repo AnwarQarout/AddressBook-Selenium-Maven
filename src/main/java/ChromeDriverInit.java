@@ -13,6 +13,7 @@ public class ChromeDriverInit {
 
     @BeforeSuite
     public void ChromeDriverInitialize(){
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         options = new ChromeOptions();
         options.addArguments("--disable-popup-blocking");
         options.addArguments("--disable-notifications");

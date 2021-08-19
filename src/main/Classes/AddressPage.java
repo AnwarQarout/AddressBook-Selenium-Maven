@@ -1,5 +1,6 @@
 package main.Classes;
 
+import main.resources.variables;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
@@ -8,19 +9,19 @@ import org.openqa.selenium.support.How;
 public class AddressPage {
     ChromeDriver driver;
 
-    @FindBy(how = How.XPATH,using = "//a[contains(@class,'row')][@data-test='create']")
+    @FindBy(how = How.XPATH,using = variables.newAddressBtn)
     WebElement newAddressBtn;
 
-    @FindBy(how = How.XPATH,using = "//table//tbody//tr//td")
+    @FindBy(how = How.XPATH,using = variables.firstNameOfFirstAddress)
     WebElement firstNameOfFirstAddress;
 
-    @FindBy(how = How.XPATH,using = "//table//tbody//tr//td//a[@data-method='delete']")
+    @FindBy(how = How.XPATH,using = variables.destroyBtn)
     WebElement destroyBtn;
 
-    @FindBy(how = How.XPATH,using = "//table//tbody//tr//td//a[contains(@data-test,'edit')]")
+    @FindBy(how = How.XPATH,using = variables.editingBtn)
     WebElement editBtn;
 
-    @FindBy(how = How.XPATH,using = "//table//tbody//tr//td//a[contains(@data-test,'show')]")
+    @FindBy(how = How.XPATH,using = variables.showBtn)
     WebElement showBtn;
 
     public AddressPage(){

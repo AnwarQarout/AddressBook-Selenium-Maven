@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SignUpPageTest extends ChromeDriverInit {
 
-    final private String URL = "http://a.testaddressbook.com/sign_up";
     private ChromeDriver driver;
 
     public SignUpPageTest(){
@@ -34,7 +33,7 @@ public class SignUpPageTest extends ChromeDriverInit {
 
     @BeforeMethod
     public void beforeMethod(){
-        driver.get(URL);
+        driver.get(variables.signUpURL);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
     }
@@ -63,7 +62,7 @@ public class SignUpPageTest extends ChromeDriverInit {
 
         signUpPage.clickSignUpBtn();
 
-        Assert.assertEquals("http://a.testaddressbook.com",driver.getCurrentUrl());
+        Assert.assertEquals(variables.URL,driver.getCurrentUrl());
     }
 
     @Test
@@ -76,13 +75,13 @@ public class SignUpPageTest extends ChromeDriverInit {
 
         signUpPage.clickSignUpBtn();
 
-        Assert.assertEquals("http://a.testaddressbook.com/sign_up",driver.getCurrentUrl());
+        Assert.assertEquals(variables.signUpURL,driver.getCurrentUrl());
     }
 
     @Test
     public void clickSignIn(){
         SignUpPage signUpPage = PageFactory.initElements(driver,SignUpPage.class);
         signUpPage.clickSignInBtn();
-        Assert.assertEquals("http://a.testaddressbook.com/sign_in",driver.getCurrentUrl());
+        Assert.assertEquals(variables.signInURL,driver.getCurrentUrl());
     }
 }
