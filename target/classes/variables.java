@@ -1,9 +1,21 @@
 package main.resources;
 
+import com.opencsv.CSVReader;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class variables {
+    public static String validFirstName = "anwar";
+    public static String validSecondName = "qarout";
+    public static String validZipCode = "12345";
+    public static String validAddress = "Ramallah";
+    public static String validCity = "Ramallah";
+
     final public static String URL = "http://a.testaddressbook.com/";
-    final public static String signInURL = "http://a.testaddressbook.com/sign-in";
-    final public static String signUpURL = "http://a.testaddressbook.com/sign-up";
+    final public static String signInURL = "http://a.testaddressbook.com/sign_in";
+    final public static String signUpURL = "http://a.testaddressbook.com/sign_up";
     final public static String addressURL = "http://a.testaddressbook.com/addresses";
     final public static String newAddressURL = "http://a.testaddressbook.com/addresses/new";
 
@@ -75,11 +87,29 @@ public class variables {
     final public static String destroyBtn = "//table//tbody//tr//td//a[@data-method='delete']";
     final public static String editingBtn = "//table//tbody//tr//td//a[contains(@data-test,'edit')]";
     final public static String showBtn = "//table//tbody//tr//td//a[contains(@data-test,'show')]";
-    final public static String validFirstName = "anwar";
-    final public static String validSecondName = "qarout";
-    final public static String validZipCode = "12345";
-    final public static String validAddress = "Ramallah";
-    final public static String validCity = "Ramallah";
+
+/*
+    private static String[] strArr;
+
+    static {
+        try {
+            strArr = myMethod();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }*/
 
 
+
+/*
+    public static String[] myMethod() throws IOException {
+        CSVReader csvReader = new CSVReader(new FileReader("main/resources/credentials.csv"));
+        String[] strArr = csvReader.readNext();
+        return strArr;
+    }
+
+
+    public variables() throws IOException {
+
+    }*/
 }

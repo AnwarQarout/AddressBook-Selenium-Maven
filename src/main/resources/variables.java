@@ -7,6 +7,12 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class variables {
+    public static String validFirstName = "anwar";
+    public static String validSecondName = "qarout";
+    public static String validZipCode = "12345";
+    public static String validAddress = "Ramallah";
+    public static String validCity = "Ramallah";
+
     final public static String URL = "http://a.testaddressbook.com/";
     final public static String signInURL = "http://a.testaddressbook.com/sign_in";
     final public static String signUpURL = "http://a.testaddressbook.com/sign_up";
@@ -82,7 +88,7 @@ public class variables {
     final public static String editingBtn = "//table//tbody//tr//td//a[contains(@data-test,'edit')]";
     final public static String showBtn = "//table//tbody//tr//td//a[contains(@data-test,'show')]";
 
-
+/*
     private static String[] strArr;
 
     static {
@@ -91,14 +97,11 @@ public class variables {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    public static String validFirstName = strArr[0];
-    public static String validSecondName = strArr[1];
-    public static String validZipCode = strArr[2];
-    public static String validAddress = strArr[3];
-    public static String validCity = strArr[4];
 
+
+/*
     public static String[] myMethod() throws IOException {
         CSVReader csvReader = new CSVReader(new FileReader("main/resources/credentials.csv"));
         String[] strArr = csvReader.readNext();
@@ -108,5 +111,5 @@ public class variables {
 
     public variables() throws IOException {
 
-    }
+    }*/
 }
