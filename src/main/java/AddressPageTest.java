@@ -3,6 +3,7 @@ package main.java;
 import main.Classes.AddressPage;
 import main.Classes.SignInPage;
 import org.openqa.selenium.By;
+import main.resources.variables;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -20,20 +21,6 @@ import java.util.concurrent.TimeUnit;
 public class AddressPageTest extends ChromeDriverInit {
 
     private ChromeDriver driver;
-    final private String validUsername = "anwartrue@gmail.com";
-    final private String validPassword = "root1234";
-
-    final private String invalidFirstName = "root1234";
-    final private String invalidSecondName = "qarout232";
-    final private String invalidZipCode = "12345sad";
-    final private String invalidAddress = "";
-    final private String invalidCity = "";
-
-    final private String validFirstName = "anwar";
-    final private String validSecondName = "qarout";
-    final private String validZipCode = "12345";
-    final private String validAddress = "Ramallah";
-    final private String validCity = "Ramallah";
 
     final private String URL = "http://a.testaddressbook.com/";
     final private String addressURL = "http://a.testaddressbook.com/addresses";
@@ -42,9 +29,9 @@ public class AddressPageTest extends ChromeDriverInit {
 
     public void SignIn(ChromeDriver driver){
         SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
-        signInPage.setEmail(validUsername);
+        signInPage.setEmail(variables.validUsername);
 
-        signInPage.setPassword(validPassword);
+        signInPage.setPassword(variables.validPassword);
 
         signInPage.clickSignInBtn();
     }
@@ -112,6 +99,7 @@ public class AddressPageTest extends ChromeDriverInit {
         addressPage.clickEditButton();
 
         Assert.assertFalse(driver.findElements(By.xpath("//h2[text()='Editing Address']")).isEmpty());
+
     }
 
 }

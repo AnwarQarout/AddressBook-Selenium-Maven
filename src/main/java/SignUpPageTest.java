@@ -2,6 +2,7 @@ package main.java;
 
 import main.Classes.SignInPage;
 import main.Classes.SignUpPage;
+import main.resources.variables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,11 +16,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class SignUpPageTest extends ChromeDriverInit {
-    final private static String badPassword = "badPassword123";
-    final private static String badUsername = "badUsername123@gmail.com";
-    final private static String invalidEmail = "badusername";
-    final private  String validUsername = "anwarTrue@gmail.com";
-    final  private String validPassword = "root1234";
+
     final private String URL = "http://a.testaddressbook.com/sign_up";
     private ChromeDriver driver;
 
@@ -60,9 +57,9 @@ public class SignUpPageTest extends ChromeDriverInit {
     public void validSignUpTest(){
         SignUpPage signUpPage = PageFactory.initElements(driver,SignUpPage.class);
 
-        signUpPage.setEmail(invalidEmail);
+        signUpPage.setEmail(variables.invalidEmail);
 
-        signUpPage.setPassword(validPassword);
+        signUpPage.setPassword(variables.validPassword);
 
         signUpPage.clickSignUpBtn();
 
@@ -73,9 +70,9 @@ public class SignUpPageTest extends ChromeDriverInit {
     public void invalidSignUpTest(){
         SignUpPage signUpPage = PageFactory.initElements(driver,SignUpPage.class);
 
-        signUpPage.setEmail(invalidEmail);
+        signUpPage.setEmail(variables.invalidEmail);
 
-        signUpPage.setPassword(validPassword);
+        signUpPage.setPassword(variables.validPassword);
 
         signUpPage.clickSignUpBtn();
 

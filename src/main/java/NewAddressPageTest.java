@@ -1,5 +1,5 @@
 package main.java;
-
+import main.resources.variables;
 import main.Classes.NewAddressPage;
 import main.Classes.SignInPage;
 import org.openqa.selenium.By;
@@ -19,20 +19,6 @@ import java.util.concurrent.TimeUnit;
 
 public class NewAddressPageTest extends ChromeDriverInit {
     private ChromeDriver driver;
-    final private String validUsername = "anwartrue@gmail.com";
-    final private String validPassword = "root1234";
-
-    final private String invalidFirstName = "root1234";
-    final private String invalidSecondName = "qarout232";
-    final private String invalidZipCode = "12345sad";
-    final private String invalidAddress = "";
-    final private String invalidCity = "";
-
-    final private String validFirstName = "anwar";
-    final private String validSecondName = "qarout";
-    final private String validZipCode = "12345";
-    final private String validAddress = "Ramallah";
-    final private String validCity = "Ramallah";
 
     final private String URL = "http://a.testaddressbook.com/";
     final private String addressURL = "http://a.testaddressbook.com/addresses";
@@ -45,9 +31,9 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
     public void SignIn(ChromeDriver driver){
         SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
-        signInPage.setEmail(validUsername);
+        signInPage.setEmail(variables.validUsername);
 
-        signInPage.setPassword(validPassword);
+        signInPage.setPassword(variables.validPassword);
 
         signInPage.clickSignInBtn();
     }
@@ -86,9 +72,9 @@ public class NewAddressPageTest extends ChromeDriverInit {
     }
 
     @Test
-    public void createInvalidFirstNameAddress(){
+    public void invalidFirstNameAddress(){
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
-        newAddressPage.createValidAddressWithArgs(invalidFirstName,validSecondName,validAddress,validCity,validZipCode);
+        newAddressPage.createValidAddressWithArgs(variables.invalidFirstName,variables.validSecondName,variables.validAddress,variables.validCity,variables.validZipCode);
 
        newAddressPage.clickSubmitBtn();
 
@@ -99,7 +85,7 @@ public class NewAddressPageTest extends ChromeDriverInit {
     @Test
     public void createInvalidLastNameAddress(){
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
-        newAddressPage.createValidAddressWithArgs(validFirstName,invalidSecondName,validAddress,validCity,validZipCode);
+        newAddressPage.createValidAddressWithArgs(variables.validFirstName,variables.invalidSecondName,variables.validAddress,variables.validCity,variables.validZipCode);
 
         newAddressPage.clickSubmitBtn();
 
@@ -110,7 +96,7 @@ public class NewAddressPageTest extends ChromeDriverInit {
     @Test
     public void createInvalidZipCodeAddress(){
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
-        newAddressPage.createValidAddressWithArgs(validFirstName,validSecondName,validAddress,validCity,invalidZipCode);
+        newAddressPage.createValidAddressWithArgs(variables.validFirstName,variables.validSecondName,variables.validAddress,variables.validCity,variables.invalidZipCode);
 
         newAddressPage.clickSubmitBtn();
 
@@ -130,7 +116,7 @@ public class NewAddressPageTest extends ChromeDriverInit {
         else{
             randomNum = ThreadLocalRandom.current().nextInt(120, 1000 + 1);
         }
-        newAddressPage.createValidAddressWithArgs(validFirstName,validSecondName,validAddress,validCity,validZipCode);
+        newAddressPage.createValidAddressWithArgs(variables.validFirstName,variables.validSecondName,variables.validAddress,variables.validCity,variables.validZipCode);
 
         newAddressPage.setAge(Integer.toString(randomNum));
 
@@ -159,7 +145,7 @@ public class NewAddressPageTest extends ChromeDriverInit {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM dd yyyy");
         date.format(formatter);
-        newAddressPage.createValidAddressWithArgs(validFirstName,validSecondName,validAddress,validCity,validZipCode);
+        newAddressPage.createValidAddressWithArgs(variables.validFirstName,variables.validSecondName,variables.validAddress,variables.validCity,variables.validZipCode);
 
         newAddressPage.setBirthday(date.toString());
 
@@ -173,7 +159,7 @@ public class NewAddressPageTest extends ChromeDriverInit {
     @Test
     public void createValidAddress(){
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
-        newAddressPage.createValidAddressWithArgs(validFirstName,validSecondName,validAddress,validCity,validZipCode);
+        newAddressPage.createValidAddressWithArgs(variables.validFirstName,variables.validSecondName,variables.validAddress,variables.validCity,variables.validZipCode);
 
         newAddressPage.clickSubmitBtn();
 
@@ -193,11 +179,11 @@ public class NewAddressPageTest extends ChromeDriverInit {
     @Test
     public void listValidAddressBeforeCreation() {
         NewAddressPage newAddressPage = PageFactory.initElements(driver,NewAddressPage.class);
-        newAddressPage.createValidAddressWithArgs(validFirstName,validSecondName,validAddress,validCity,validZipCode);
+        newAddressPage.createValidAddressWithArgs(variables.validFirstName,variables.validSecondName,variables.validAddress,variables.validCity,variables.validZipCode);
 
         newAddressPage.clickListBtn();
 
         Assert.assertEquals(driver.getCurrentUrl(), addressURL);
-        Assert.assertFalse(driver.findElements(By.xpath("//tr//td[text()='" + validFirstName + "']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath("//tr//td[text()='" + variables.validFirstName + "']")).isEmpty());
     }
 }

@@ -1,6 +1,7 @@
 package main.java;
 
 import main.Classes.SignInPage;
+import main.resources.variables;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,11 +13,7 @@ import org.testng.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 public class SignInPageTest extends ChromeDriverInit {
-    final private static String badPassword = "badPassword123";
-    final private static String badUsername = "badUsername123@gmail.com";
-    final private static String invalidEmail = "badusername";
-    final private  String validUsername = "anwarTrue@gmail.com";
-    final  private String validPassword = "root1234";
+
     final private String URL = "http://a.testaddressbook.com/sign_in";
      private ChromeDriver driver;
 
@@ -80,7 +77,7 @@ public class SignInPageTest extends ChromeDriverInit {
         //only enter password
         driver.get(URL);
 
-        signInPage.setPassword(badPassword);
+        signInPage.setPassword(variables.badPassword);
 
         signInPage.clickSignInBtn();
 
@@ -89,9 +86,9 @@ public class SignInPageTest extends ChromeDriverInit {
         //enter invalid username and password
         driver.get(URL);
 
-        signInPage.setEmail(badUsername);
+        signInPage.setEmail(variables.badUsername);
 
-        signInPage.setEmail(badPassword);
+        signInPage.setEmail(variables.badPassword);
 
         signInPage.clickSignInBtn();
 
@@ -99,7 +96,7 @@ public class SignInPageTest extends ChromeDriverInit {
 
         // Only enter username
         driver.get(URL);
-        signInPage.setEmail(validUsername);
+        signInPage.setEmail(variables.validUsername);
 
         signInPage.clickSignInBtn();
 
@@ -107,7 +104,7 @@ public class SignInPageTest extends ChromeDriverInit {
 
         // enter invalid username with no @ in it
         driver.get(URL);
-        signInPage.setEmail(invalidEmail);
+        signInPage.setEmail(variables.invalidEmail);
 
         signInPage.clickSignInBtn();
 
@@ -117,9 +114,9 @@ public class SignInPageTest extends ChromeDriverInit {
     @Test
     public void signIn(){
         SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
-        signInPage.setEmail(validUsername);
+        signInPage.setEmail(variables.validUsername);
 
-        signInPage.setPassword(validPassword);
+        signInPage.setPassword(variables.validPassword);
 
         signInPage.clickSignInBtn();
 

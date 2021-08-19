@@ -54,7 +54,7 @@
             <class name="main.java.NewAddressPageTest">
                 <methods>
                     <include name="createEmptyAddress"/>
-                    <include name="createInvalidFirstNameAddress"/>
+                    <include name="createvariables.invalidFirstNameAddress"/>
                     <include name="createInvalidLastNameAddress"/>
                     <include name="createInvalidZipCodeAddress"/>
                     <include name="createInvalidAgeAddress"/>

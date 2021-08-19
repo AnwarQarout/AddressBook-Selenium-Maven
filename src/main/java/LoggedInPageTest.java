@@ -2,6 +2,7 @@ package main.java;
 
 import main.Classes.LoggedInPage;
 import main.Classes.SignInPage;
+import main.resources.variables;
 import main.java.ChromeDriverInit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,10 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LoggedInPageTest extends ChromeDriverInit {
     private ChromeDriver driver;
-    final private  String validUsername = "anwartrue@gmail.com";
-    final  private String validPassword = "root1234";
 
-    final  private String invalidFirstName = "root1234";
     final private String invalidSecondName = "qarout232";
     final private String invalidZipCode = "12345sad";
     final private String invalidAddress = "";
@@ -51,9 +49,9 @@ public class LoggedInPageTest extends ChromeDriverInit {
 
     public void SignIn(ChromeDriver driver){
         SignInPage signInPage = PageFactory.initElements(driver,SignInPage.class);
-        signInPage.setEmail(validUsername);
+        signInPage.setEmail(variables.validUsername);
 
-        signInPage.setPassword(validPassword);
+        signInPage.setPassword(variables.validPassword);
 
         signInPage.clickSignInBtn();
     }
@@ -99,7 +97,7 @@ public class LoggedInPageTest extends ChromeDriverInit {
         Assert.assertFalse(driver.findElements(By.xpath("//a[text()='Sign out']")).isEmpty());
         Assert.assertFalse(driver.findElements(By.xpath("//a[text()='Addresses']")).isEmpty());
 
-        Assert.assertFalse(driver.findElements(By.xpath("//span[@class='navbar-text'][text()='"+validUsername+"']")).isEmpty());
+        Assert.assertFalse(driver.findElements(By.xpath("//span[@class='navbar-text'][text()='"+variables.validUsername+"']")).isEmpty());
     }
 
     @Test
